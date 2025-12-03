@@ -26,7 +26,7 @@ public class LoginTest {
         // Kirim request POST ke endpoint login REST
         Response response = given()
                 .header("Content-Type", "application/json")
-                .header("x-api-key", "reqres-free-v1")
+                .header("x-api-key", ConfigReader.getProperty("apiKey"))
                 .body(loginBody.loginData().toString())
                 .when()
                 .post("/api/login") // endpoint login REST
